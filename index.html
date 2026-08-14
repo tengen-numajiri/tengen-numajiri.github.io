@@ -288,15 +288,8 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
 .strength p{ font-size:13.5px; line-height:1.95; color:var(--ink-3); }
 
 /* ============================================================
-   CASE STUDY
+   PROJECT EXAMPLES
    ============================================================ */
-.note{
-  display:flex; gap:12px; align-items:flex-start; margin-top:28px;
-  border:1px dashed #d8dde6; background:#fff; padding:16px 20px; border-radius:3px;
-  font-size:12.5px; line-height:1.9; color:var(--ink-3);
-}
-.note b{ color:var(--ink-2); font-weight:700; }
-
 .cases{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(18px,2.2vw,24px); }
 @media (max-width:900px){ .cases{ grid-template-columns:1fr; } }
 .case{
@@ -334,6 +327,9 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
 .co-table th,.co-table td{ text-align:left; vertical-align:top; padding:18px 4px; border-bottom:1px solid var(--line-2); font-size:14px; line-height:1.9; }
 .co-table th{ width:132px; font-weight:700; letter-spacing:.1em; color:var(--ink-3); font-size:12.5px; padding-top:20px; }
 .co-table td{ color:var(--ink); }
+.co-biz{ margin:0; padding-left:1.7em; list-style:decimal outside; }
+.co-biz li{ padding-left:.15em; }
+.co-biz li + li{ margin-top:9px; }
 @media (max-width:520px){
   .co-table th,.co-table td{ display:block; border-bottom:0; padding:0; }
   .co-table th{ width:auto; padding-top:18px; }
@@ -344,15 +340,12 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
 .officers{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
 @media (max-width:980px){ .officers{ grid-template-columns:1fr; } }
 .officer{ background:#fff; padding:clamp(26px,3vw,36px); }
-.officer-top{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:14px; }
-.officer .role{
-  font-family:var(--f-en); font-size:10.5px; font-weight:700; letter-spacing:.2em;
-  color:#fff; background:var(--ai); padding:5px 11px; border-radius:2px;
-}
+.officer-top{ margin-bottom:14px; }
 .officer .name{ font-size:20px; font-weight:700; letter-spacing:.08em; }
 .officer .name small{ display:block; font-family:var(--f-en); font-size:10.5px; font-weight:600; letter-spacing:.16em; color:var(--ink-3); margin-top:6px; }
 .officer .title{ font-size:12.5px; letter-spacing:.08em; color:var(--ai-2); font-weight:600; margin-bottom:12px; }
 .officer p{ font-size:13.5px; line-height:1.95; color:var(--ink-2); }
+.officer-bio p + p{ margin-top:12px; }
 
 /* ============================================================
    CONTACT
@@ -478,7 +471,7 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
     <nav class="nav" id="pcnav" aria-label="グローバルナビゲーション">
       <a href="#top">TOP</a>
       <a href="#service">SERVICE</a>
-      <a href="#case">CASE&nbsp;STUDY</a>
+      <a href="#case">PROJECTS</a>
       <a href="#company">COMPANY</a>
       <a class="cta" href="#contact">CONTACT</a>
     </nav>
@@ -495,7 +488,7 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
     <ol>
       <li><a href="#top"><span class="n">01</span>TOP<span class="jp">トップ</span></a></li>
       <li><a href="#service"><span class="n">02</span>SERVICE<span class="jp">事業内容</span></a></li>
-      <li><a href="#case"><span class="n">03</span>CASE STUDY<span class="jp">案件事例</span></a></li>
+      <li><a href="#case"><span class="n">03</span>PROJECTS<span class="jp">プロジェクト例</span></a></li>
       <li><a href="#company"><span class="n">04</span>COMPANY<span class="jp">会社概要</span></a></li>
       <li><a href="#contact"><span class="n">05</span>CONTACT<span class="jp">お問い合わせ</span></a></li>
     </ol>
@@ -618,20 +611,15 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
   </div>
 </section>
 
-<!-- ============================ CASE STUDY ============================ -->
+<!-- ============================ PROJECT EXAMPLES ============================ -->
 <section class="section" id="case">
   <div class="wrap">
     <header class="sec-head">
       <span class="sec-num reveal">02</span>
-      <h2 class="sec-title reveal" data-d="1">CASE&nbsp;STUDY<span class="jp">案件事例</span></h2>
+      <h2 class="sec-title reveal" data-d="1">PROJECT&nbsp;EXAMPLES<span class="jp">プロジェクト例</span></h2>
       <p class="sec-lead reveal" data-d="2">
-        天元が取り組む案件は、顧客課題の解決に加えて「どのナレッジが残るか」「どう事業化できるか」まで一貫して設計します。
-        ここでは各領域で想定される案件のイメージを、課題・アプローチ・蓄積する資産・想定する事業化の4点で示します。
+        ここでは天元が取り組む事例を課題・アプローチ・蓄積する資産・想定する事業化の4点で示します。
       </p>
-      <div class="note reveal" data-d="3">
-        <b>※</b>
-        <span>本ページに掲載しているケースは、現時点で天元が想定する案件イメージであり、特定の顧客企業・実績を示すものではありません。実績に基づく事例は、順次公開いたします。</span>
-      </div>
     </header>
 
     <div class="cases">
@@ -789,12 +777,19 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
           <tr><th>設立</th><td>2026年7月</td></tr>
           <tr><th>代表者</th><td>代表取締役CEO　矢田部 皓太</td></tr>
           <tr><th>所在地</th><td>東京都中央区日本橋浜町３丁目３番１－３６０９</td></tr>
-          <tr><th>資本金</th><td>300万円</td></tr>
           <tr>
             <th>事業内容</th>
             <td>
-              共同事業型（AI・システムを活用した新規事業の共同立ち上げ・共同運営）<br>
-              開発支援型（AI・システム開発の企画・設計から開発、事業化までの支援）
+              <ol class="co-biz">
+                <li>人工知能（AI）、情報システム、ソフトウェア、アプリケーション、プラットフォーム及び情報通信技術に関する企画、開発、設計、制作、販売、保守、管理及び運営</li>
+                <li>人工知能（AI）、情報システム及びデジタルトランスフォーメーション（DX）に関するコンサルティング業務</li>
+                <li>人工知能（AI）、ソフトウェア、システム及び各種デジタルサービスの受託開発業務</li>
+                <li>人工知能（AI）、システム、ソフトウェア及び各種技術に関する共同研究、共同開発及び事業提携</li>
+                <li>前号に関連して創出された知的財産権（著作権、特許権、商標権、意匠権、ノウハウその他これらに類する権利を含む。）の取得、保有、利用許諾、譲渡、管理及び運用</li>
+                <li>各種データの収集、分析、加工、提供及び管理業務</li>
+                <li>インターネットを利用した各種情報提供サービスの企画、制作、運営及び管理</li>
+                <li>前各号に附帯関連する一切の事業</li>
+              </ol>
             </td>
           </tr>
         </tbody>
@@ -810,36 +805,37 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
     <div class="officers reveal">
       <article class="officer">
         <div class="officer-top">
-          <span class="role">CEO</span>
           <span class="name">矢田部 皓太<small>KOTA YATABE</small></span>
         </div>
         <p class="title">代表取締役 CEO</p>
-        <p>
-          大学在学時に株式会社ONLIEを創業。システム開発スキルを持ち、企業課題に即したDX支援を得意とする。
-        </p>
+        <div class="officer-bio">
+          <p>大学在学中にDX / AI 領域での創業を経験。</p>
+          <p>コンサルティング、システム・AI開発、IT教育の3事業を立ち上げ、大手企業・行政プロジェクトを中心にDX・AI導入支援を行い、戦略・構想策定から開発・導入、人材育成までを一気通貫で手がける。</p>
+          <p>外部資金調達を実施しながら事業拡大を推進するなど、創業から事業開発、営業、組織づくり、資金調達まで企業経営を幅広く経験。</p>
+          <p>天元では、これまで培ったテクノロジーと事業開発の知見をもとに、CEOとしての職務を遂行する。</p>
+        </div>
       </article>
 
       <article class="officer">
         <div class="officer-top">
-          <span class="role">CTO</span>
           <span class="name">沼尻 匠<small>TAKUMI NUMAJIRI</small></span>
         </div>
         <p class="title">代表取締役 CTO</p>
-        <p>
-          株式会社GRIDでCTO・CIOを担う。AI・システム開発・PM業務などフルスタックのスキルを保有。
-        </p>
+        <div class="officer-bio">
+          <p>大学在学中にHRテック・AIベンチャーの創業エンジニアとしてキャリアをスタート。事業立ち上げ期から経営に近い形で技術と事業の両面に携わる。</p>
+          <p>その後、AIベンチャーにて統計・機械学習・深層学習の領域で多数の顧客案件に従事。自社フレームワークを活用したアプリケーションの企画・設計・開発・運用を一貫して推進する傍ら、エンジニアが利用する機械学習基盤の設計・構築、社内インフラ環境の整備も手がける。</p>
+          <p>その後、エンジニア職からグループリーダー、CTOへとキャリアアップ。組織開発と並行して、顧客との実証実験から得たAIエンジンを業務アプリケーションとして展開するための基盤設計・開発を牽引。複数の新規事業立ち上げにおいて、技術の選定、アーキテクチャ設計、開発体制の構築に主導的に関わり、CTO在任期間中に会社の上場を経験。テクノロジーと事業開発の知見をもとに経営層の意思決定をサポート。</p>
+        </div>
       </article>
 
       <article class="officer">
         <div class="officer-top">
-          <span class="role">DIRECTOR</span>
           <span class="name">香山 哲<small>TETSU KAYAMA</small></span>
         </div>
         <p class="title">取締役</p>
-        <p>
-          京都大学卒業後、リクルートに入社。任天堂との合弁会社マリーガル・マネジメントの社長を経て、
-          セガ代表取締役COOとして経営再建を主導。その後、円谷プロダクションなど多様な企業の取締役を歴任。
-        </p>
+        <div class="officer-bio">
+          <p>コムウェア株式会社代表取締役社長、株式会社ライフクエスト代表取締役、ジェネシスヘルスケア取締役など現在も多数の会社の経営に携わる。株式会社セガ代表取締役、トムスエンタテインメント取締役、円谷プロダクション取締役、ソニー・コンピュータエンタテインメントコーポレートフェロー、トランスコスモス特別顧問、エムティーアイ特別顧問など歴任。</p>
+        </div>
       </article>
     </div>
 
@@ -945,7 +941,7 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
     </a>
     <nav aria-label="フッターナビゲーション">
       <a href="#service">SERVICE</a>
-      <a href="#case">CASE STUDY</a>
+      <a href="#case">PROJECTS</a>
       <a href="#company">COMPANY</a>
       <a href="#contact">CONTACT</a>
     </nav>
