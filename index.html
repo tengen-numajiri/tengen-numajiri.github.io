@@ -244,28 +244,6 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
 /* ============================================================
    SERVICE
    ============================================================ */
-/* flow diagram */
-.flow{
-  display:grid; grid-template-columns:repeat(4,1fr); gap:0;
-  border:1px solid var(--line); border-radius:3px; overflow:hidden; background:#fff;
-  margin-bottom:clamp(46px,6vw,72px);
-}
-.flow-step{ padding:26px 24px 28px; position:relative; }
-.flow-step + .flow-step{ border-left:1px solid var(--line-2); }
-.flow-step .n{ font-family:var(--f-en); font-size:10.5px; font-weight:700; letter-spacing:.2em; color:var(--ai-2); }
-.flow-step h4{ font-size:15.5px; font-weight:700; letter-spacing:.04em; margin:10px 0 8px; }
-.flow-step p{ font-size:13px; line-height:1.85; color:var(--ink-3); }
-.flow-step:not(:last-child)::after{
-  content:""; position:absolute; right:-5px; top:50%; z-index:2;
-  width:9px; height:9px; border-top:1px solid var(--ai-2); border-right:1px solid var(--ai-2);
-  transform:translateY(-50%) rotate(45deg); background:#fff;
-}
-@media (max-width:820px){
-  .flow{ grid-template-columns:1fr; }
-  .flow-step + .flow-step{ border-left:0; border-top:1px solid var(--line-2); }
-  .flow-step:not(:last-child)::after{ right:auto; left:50%; top:auto; bottom:-5px; transform:translateX(-50%) rotate(135deg); }
-}
-
 /* two business cards */
 .biz{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,2.5vw,28px); }
 @media (max-width:900px){ .biz{ grid-template-columns:1fr; } }
@@ -280,14 +258,17 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
   font-family:var(--f-en); font-size:10px; font-weight:700; letter-spacing:.2em;
   color:var(--ai); background:var(--ai-soft); padding:6px 12px; border-radius:2px; margin-bottom:20px;
 }
+.biz-en{
+  display:block; font-family:var(--f-en); font-size:11px; font-weight:700;
+  letter-spacing:.22em; color:var(--ink-3); margin-bottom:10px;
+}
 .biz-card h3{ font-size:clamp(20px,2.4vw,25px); font-weight:700; letter-spacing:.04em; line-height:1.5; }
-.biz-card .sub{ margin-top:8px; font-size:12.5px; letter-spacing:.1em; color:var(--ai-2); font-weight:600; }
+.biz-card .sub{ margin-top:12px; font-size:14px; letter-spacing:.06em; color:var(--ai-2); font-weight:700; line-height:1.7; }
 .biz-card > p{ margin-top:18px; font-size:14px; line-height:2; color:var(--ink-2); }
-.biz-dl{ margin-top:26px; padding-top:22px; border-top:1px solid var(--line-2); display:grid; gap:16px; }
-.biz-dl > div{ display:grid; grid-template-columns:88px 1fr; gap:14px; }
-.biz-dl dt{ font-size:11px; font-weight:700; letter-spacing:.12em; color:var(--ink-3); padding-top:4px; }
-.biz-dl dd{ margin:0; font-size:13.5px; line-height:1.85; }
-@media (max-width:520px){ .biz-dl > div{ grid-template-columns:1fr; gap:4px; } }
+.biz-card .biz-note{
+  margin-top:auto; padding-top:22px; font-size:12.5px; line-height:1.9; color:var(--ink-3);
+}
+.biz-card .sub + p{ margin-top:20px; padding-top:20px; border-top:1px solid var(--line-2); }
 
 /* strengths */
 .sub-head{
@@ -561,85 +542,37 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
       <span class="sec-num reveal">01</span>
       <h2 class="sec-title reveal" data-d="1">SERVICE<span class="jp">事業内容</span></h2>
       <p class="sec-lead reveal" data-d="2">
-        天元は、受託開発を最終目的とする会社ではありません。ゲーム開発やAI受託の現場を通じて得た技術、判断基準、制作工程、評価方法を抽象化し、
-        開発パッケージ、コンストラクションツール、事業権・IPへ変換します。案件で生まれた資産が次の案件の速度と品質を上げ、
-        やがて自社事業・共同事業として独立した収益になる——この循環そのものが天元の事業です。
+        新規事業やプロダクト開発は、いまも多くの企業にとって高い不確実性を伴います。
+        アイデアがあっても、人員やコストが障壁となり、実現に至らないケースは少なくありません。
+        AIを単なる効率化の手段ではなく、事業そのものの設計を変える基盤技術として活用することで、構想と実装の距離を短縮します。
       </p>
     </header>
 
-    <!-- 事業モデル -->
-    <div class="flow reveal">
-      <div class="flow-step">
-        <span class="n">STEP 01</span>
-        <h4>受託・共同開発</h4>
-        <p>顧客費用を得ながら、実データ・実業務の中で課題、技術、導入効果、支払意思を検証する。</p>
-      </div>
-      <div class="flow-step">
-        <span class="n">STEP 02</span>
-        <h4>ナレッジ蓄積</h4>
-        <p>制作・業務工程、評価基準、例外処理、運用方法を抽出し、モデルが変わっても残る形に整理する。</p>
-      </div>
-      <div class="flow-step">
-        <span class="n">STEP 03</span>
-        <h4>開発パッケージ化</h4>
-        <p>共通部品、テンプレート、評価器、コンストラクションツールとして再利用可能な形に実装する。</p>
-      </div>
-      <div class="flow-step">
-        <span class="n">STEP 04</span>
-        <h4>事業化</h4>
-        <p>自社サービス、共同事業、ライセンス、売上分配へ接続し、案件売上を継続収益へ転換する。</p>
-      </div>
-    </div>
-
-    <!-- 二つの事業 -->
+    <!-- 二つの事業モデル -->
     <div class="biz">
       <article class="biz-card reveal">
         <span class="biz-tag">BUSINESS 01</span>
-        <h3>ゲーム・IP事業</h3>
-        <p class="sub">事業化済みの成長エンジン</p>
+        <span class="biz-en">CO-CREATION MODEL</span>
+        <h3>共同事業型</h3>
+        <p class="sub">初期コストを抑え、ともに事業を育てる。</p>
         <p>
-          ゲーム会社・IPホルダーから開発費を受け取りながら、既存ゲーム資産の解析・再構築、操作系やUIを含む製品化工程までを担います。
-          そこで確立した開発工程と評価方法を共通資産として蓄積し、後続タイトル、IP展開、ライセンス、売上分配へつなげます。
+          事業性や成長可能性の高いプロジェクトでは、天元も事業パートナーとして参画します。
+          開発費の一部もしくは全部を天元が負担する代わりに、レベニューシェアなどの成果連動型スキームを組み合わせ、双方でリスクとリターンを共有。
+          クライアントが持つIP・データ・顧客基盤・業界知見と、天元のAI・開発力を掛け合わせ、事業の立ち上げから成長までをともに推進します。
         </p>
-        <dl class="biz-dl">
-          <div>
-            <dt>提供領域</dt>
-            <dd>コンシューマーゲームの再構築・製品化／IP連動カジュアルゲーム／過去IPのAR・新規体験化</dd>
-          </div>
-          <div>
-            <dt>収益モデル</dt>
-            <dd>受託開発費 ＋ 製品化費 ＋ ライセンス ＋ 売上分配</dd>
-          </div>
-          <div>
-            <dt>提供価値</dt>
-            <dd>2タイトル目以降で共通部品を再利用し、開発工数と原価を下げながら収益ポートフォリオを積み上げる</dd>
-          </div>
-        </dl>
+        <p class="biz-note">※共同事業型は、事業性・成長可能性・双方の役割等を踏まえ、個別に取り組み条件を設計します。</p>
       </article>
 
       <article class="biz-card reveal" data-d="1">
         <span class="biz-tag">BUSINESS 02</span>
-        <h3>AI受託事業</h3>
-        <p class="sub">次の事業をつくる検証エンジン</p>
+        <span class="biz-en">DEVELOPMENT MODEL</span>
+        <h3>開発支援型</h3>
+        <p class="sub">開発費をベースに、スピーディーに事業を形に。</p>
         <p>
-          個別開発を積み上げるだけの受託事業ではありません。顧客固有のデータ・業務・品質基準へ生成AIを接続する過程で、
-          業務工程、評価基準、例外処理、運用方法を獲得し、開発パッケージへ変換。導入後はパッケージ利用料、共同事業、
-          売上分配へ移行させます。
+          天元がAI・システム開発の技術力・開発リソースを提供し、企画・設計から開発、事業化までを支援します。
+          開発費をクライアント企業に全額負担していただくことで、レベニューシェア比率を検討する必要がないことが特徴で、
+          開発費を中心とした一般的なシステム開発のプロジェクトモデルとなります。
         </p>
-        <dl class="biz-dl">
-          <div>
-            <dt>提供領域</dt>
-            <dd>医療／金融／ERP・DAP／toB SaaS・建設DX／開発工程AI</dd>
-          </div>
-          <div>
-            <dt>収益モデル</dt>
-            <dd>受託・PoC費 ＋ 導入費 ＋ パッケージ利用料 ＋ 共同事業収益 ＋ 売上分配</dd>
-          </div>
-          <div>
-            <dt>提供価値</dt>
-            <dd>汎用モデルではなく、現場で得られる工程ナレッジと評価基準を長期の差別化資産として顧客と共有する</dd>
-          </div>
-        </dl>
       </article>
     </div>
 
@@ -860,8 +793,8 @@ body.menu-open .drawer{ opacity:1; visibility:visible; transform:none; }
           <tr>
             <th>事業内容</th>
             <td>
-              ゲーム・IP事業（既存ゲーム資産の再構築・製品化、IP連動タイトル開発、AR・新規体験化）<br>
-              AI受託事業（生成AIの業務接続、AIエージェント／RAG構築、開発パッケージ提供）
+              共同事業型（AI・システムを活用した新規事業の共同立ち上げ・共同運営）<br>
+              開発支援型（AI・システム開発の企画・設計から開発、事業化までの支援）
             </td>
           </tr>
         </tbody>
